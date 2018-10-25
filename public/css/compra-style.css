@@ -1,0 +1,134 @@
+.box-comprar{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.nome-produto-comprar{
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+.medidas{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+}
+.medidas> span{
+    font-size: 16px;
+    
+}
+.medidas>p>span{
+    font-weight: bold;
+    color: #000;
+}
+.medidas>ul{
+    list-style: none;
+}
+.medidas>ul>li{
+    cursor: pointer;
+    text-align: center;
+    border: solid 2px #3333333b;
+    height: 30px;
+    border-radius: 15px;
+   
+}
+.medidas>ul>li:hover{
+    border: solid 2px #000;
+}
+.medidas>ul>li:hover>a{
+    opacity: 0.5;
+}
+.medidas>ul>li>a{
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+}
+.medidas>ul>li>a:hover{
+    text-decoration: none;
+}
+.nome-produto-comprar{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.descricao-pagamento{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+.descricao-pagamento>p>span{
+    font-weight: bold;
+}
+.area-btn{
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+.btn-comprar{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f09b1a6e;
+    color: #fff;
+    font-size: 25px;
+    height: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.btn-comprar:hover{
+    text-decoration: none;
+    color: #fff;
+    background: #f09b1a;
+}
+.estrelas input[type=radio] {
+    display: none;
+  }
+  .estrelas label i.fa:before {
+    content:'\f005';
+    color: #FC0;
+  }
+  .estrelas input[type=radio]:checked ~ label i.fa:before {
+    color: #CCC;
+  }
+  .btn-custom{
+      width: 100%;
+      text-align: left;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      border: solid 2px #3333332e;
+  }
+  .btn-custom>span{
+     font-weight: bold;
+  }
+  .btn-parcela{
+      height: auto;
+  }
+  .dropdown-menu>ul{
+      list-style: none;
+  }
+  .dropdown-menu>ul>li>a{
+      color: #333;
+  }
+  .dropdown-menu>ul>li>a:hover{
+      text-decoration: none;
+  }
+  .dropdown-menu>ul>li>a>span{
+    font-weight: bold;
+    color: #000;
+  }
+  .dropdown-menu-custom{
+      width: 100%;
+  }
+  .cal-cep{
+      margin-top: 30px;
+      margin-bottom: 30px;
+  }
+@media(max-width: 768px){
+    .btn-img-parcela{
+        display: none;
+    }
+    .btn-custom{
+        display: block;
+        text-align: center;
+    }
+}
