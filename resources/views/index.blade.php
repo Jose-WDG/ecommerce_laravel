@@ -69,14 +69,15 @@
 			<div class="row">
 			<div class="title-lancamento text-center">LANÇAMENTOS</div>
 			<ul class="lista-produtos">
-			<!-- ROW 1 -->
+				@foreach ($produtos as $produto)
+							<!-- ROW 1 -->
 			<li>
 					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
 					<div class="produto-box">
-						<img class="produto-img" src="{{ url('/storage/imagens/produtos/camisetas/camiseta1.jpg') }}">
-						<img class="img-costa" src="{{ url('/storage/imagens/produtos/camisetas/camiseta1-costa.jpg') }}">
+						<img class="produto-img" src="{{ asset('storage/'.str_after($produto->imgFrente,'public/')) }}">
+						<img class="img-costa" src="{{ asset('storage/'.str_after($produto->imgCosta,'public/')) }}">
 						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
+						<div class="nome-produto text-center"><a href="#">{{ $produto->nome }}</a></div>
 							<div class="avalicao-produto">
 							<div class="estrelas">
 								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -93,426 +94,19 @@
 							</div>
 							</div>
 							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
+							<div class="valor-total">R$ {{ number_format($produto->preco, 2) }}</div>
 							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
+							até <span>3x</span> de <span>R$ {{ number_format($produto->preco/3, 2) }}</span> sem juros ou <br><span>R$ {{number_format($produto->preco, 2) }}</span> via Depósito
 							</div>
 						<div class="comprar-produto">
-						<a class="btn-vermais" href="{{ route('comprar') }}">VER MAIS</a>
+						<a class="btn-vermais" href="{{ route('comprar.show',$produto->id) }}">VER MAIS</a>
 						</div>
 							</div>
 						</div>
-	
 					</div>
 					</div>
 				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/camiseta2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/camiseta2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/camiseta3.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/camiseta3-costa.jpg')}}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/blusa1.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/blusa1-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-				<!-- ROW 2 -->
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/legging/legging1.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/legging/legging1-lado.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">LEGGING XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/legging/legging2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/legging/legging2-lado.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">LEGGING XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/legging/legging3.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/legging/legging3-lado.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">LEGGING XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/legging/legging2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/legging/legging2-lado.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">LEGGING XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-					<!-- ROW 3 -->
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-					<img class="produto-img" src="{{ url('storage/imagens/produtos/vestidos/vestido2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/vestidos/vesstido2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">VESTIDO XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/vestidos/vestido2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/vestidos/vesstido2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">VESTIDO XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-					<img class="produto-img" src="{{ url('storage/imagens/produtos/vestidos/vestido3.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/vestidos/vesstido2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">VESTIDO XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-					<img class="produto-img" src="{{ url('storage/imagens/produtos/vestidos/vestido2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/vestidos/vesstido2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">VESTIDO XXT</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-						<div class="comprar-produto">
-						<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-						</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
+				@endforeach
 			</ul>
 			</div>
 	</div>
@@ -522,13 +116,16 @@
 			<div class="title-lancamento text-center">DESTAQUES</div>
 			<ul class="lista-produtos">
 			<!-- ROW 1 -->
+				@foreach ($produtos_destaque as $produto_destaque)
+						
+			
 			<li>
 					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
 					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/camiseta1.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/camiseta1-costa.jpg') }}">
+						<img class="produto-img" src="{{ asset('storage/'.str_after( $produto_destaque->imgFrente,'public/')) }}">
+						<img class="img-costa" src="{{ asset('storage/'.str_after( $produto_destaque->imgCosta,'public/')) }}">
 						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
+						<div class="nome-produto text-center"><a href="#">{{ $produto_destaque->nome }}</a></div>
 							<div class="avalicao-produto">
 							<div class="estrelas">
 								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -558,120 +155,16 @@
 					</div>
 					</div>
 				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/camiseta2.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/camiseta2-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-							<div class="comprar-produto">
-							<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-							</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/camiseta3.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/camiseta3-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-							<div class="comprar-produto">
-							<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-							</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
-	
-				<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
-					<div class="produto-box">
-						<img class="produto-img" src="{{ url('storage/imagens/produtos/camisetas/blusa1.jpg') }}">
-						<img class="img-costa" src="{{ url('storage/imagens/produtos/camisetas/blusa1-costa.jpg') }}">
-						<div class="produto-descricao">
-							<div class="nome-produto text-center"><a href="#">Camise xxt</a></div>
-							<div class="avalicao-produto">
-							<div class="estrelas">
-								<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-								<label for="cm_star-1"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-1" name="fb" value="1"/>
-								<label for="cm_star-2"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-2" name="fb" value="2"/>
-								<label for="cm_star-3"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-3" name="fb" value="3"/>
-								<label for="cm_star-4"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-4" name="fb" value="4"/>
-								<label for="cm_star-5"><i class="fa"></i></label>
-								<input type="radio" id="cm_star-5" name="fb" value="5"/>
-							</div>
-							</div>
-							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
-							<div class="comprar-produto">
-							<a class="btn-vermais" href="comprar.php">VER MAIS</a>
-							</div>
-							</div>
-						</div>
-	
-					</div>
-					</div>
-				</li>
+				@endforeach
 			</ul>
+			
+			
 		</div>
+		<div class="text-center paginate">
+				{{ $produtos_destaque->links() }}
+				</div>
 	</div><!-- FIM CONTEINAR -->
+
 	<div class="container"><!-- CONTAINER -->
 		<div class="row">
 			<ul class="banner-produto-destaque">

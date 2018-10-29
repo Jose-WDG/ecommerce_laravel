@@ -15,6 +15,7 @@ class ProdutosControler extends Controller
     {
         $produtos = \App\produto::get();
         return view('cms.crudProdutos',compact('produtos'));
+        
     
     }
 
@@ -37,20 +38,23 @@ class ProdutosControler extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile('img-frente') ){
-            dd($request->file('img-frente'));
+        $novo_produto = new produto;
+
+        if($request->hasFile('imgFrente') ){
+            $novo_produto->imgFrente = $request->imgFrente->store('public/storage');
+
         }   
         else{
-            dd('img-frente: não tem');
+            $novo_produto->imgFrente = 'Não foi definida uma imagem';
         }
             
         
-        if($request->hasFile('img-costa') ):
-            dd('img-costa: tem');
+        if($request->hasFile('imgCosta') ):
+            $novo_produto->imgCosta = $request->imgCosta->store('public/storage');
         else:
-            dd('img-costa: não tem');
+            $novo_produto->imgCosta = 'Não foi definida uma imagem';
         endif;
-        $novo_produto = new produto;
+        
         $novo_produto->nome = $request->input('nome');
         $novo_produto->descricao = $request->input('descricao');
         $novo_produto->preco = $request->input('preco');

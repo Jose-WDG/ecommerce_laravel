@@ -37,12 +37,12 @@
 
             </div>
              <div class="form-group">
-              <label for="img-frente">img frente</label>
-              <input name="img-frente" type="file" class="form-control" >
+              <label for="imgFrente">img frente</label>
+              <input name="imgFrente" type="file" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="img-costa">img costas</label>
-                <input name="img-costa" type="file" class="form-control" >
+                <label for="imgCosta">img costas</label>
+                <input name="imgCosta" type="file" class="form-control" >
               </div>
             <div class="form-group">
                 <label for="preco">preço em R$</label>

@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 Route::prefix('holly')->group(function()
 {
-    Route::get('/', 'viewController@get_view_index');
-    Route::get('/comprar', 'viewController@get_view_cromprar')->name('comprar');
+    Route::resource('/', 'ListarProdutos');
+    Route::resource('comprar', 'ListarProdutos');
     Route::get('/login', 'viewController@get_view_login' )->name('entrar');
     Route::get('/nova Conta','viewController@get_view_novaConta' )->name('nova conta');
     Route::get('/Recuperar Senha', 'viewController@get_view_recuperarSenha')->name('recuperar senha');

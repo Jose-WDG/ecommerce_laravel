@@ -4,14 +4,14 @@
 <div class="container">
   <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12 box-comprar">
-          <img class="img-responsive" src="imagens/produtos/camisetas/blusa1.jpg"/>
+          <img class="img-responsive" src="{{asset('storage/'.str_after($produto->imgFrente,'public/'))}}"/>
       </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
               <div class="menu-links">
                   menu
               </div>
               <div class="nome-produto-comprar text-center">
-                  Lorem ipsum dolor sit amet
+                 {{ $produto->nome }}
               </div>
               <div>
                   <div class="estrelas">
@@ -29,6 +29,10 @@
                   </div>
               </div>
               <div class="medidas ">
+                    <span>Descrição:<span><br>
+                    {{$produto->descricao}}
+              </div>
+              <div class="medidas ">
                   <span>MEDIDAS</span>
                   <p>Selecione a opção de <span>Tamanhos de Posters:<span></p>
                       <ul>
@@ -40,8 +44,8 @@
               </div>
               <div class="descricao-pagamento col-lg-12 col-md-12 col-sm-12 col-xm-12 box-comprar">
                  <p> A partir de
-                  <span>R$ 17,90</span>
-                  até <span>3x de R$ 5,95 sem juros</span> ou <span>R$ 16,11 via Depósito</span></p>
+                 <span>R$ {{ $produto->preco}}</span>
+                  até <span>3x de R$ {{ number_format($produto->preco/3, 2) }} sem juros</span> ou <span>R$ {{ $produto->preco}} via Depósito</span></p>
               </div>
               <div class="area-btn">
                   <a class="btn-comprar col-lg-12" href="#">

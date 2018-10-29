@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="row row1">
                         <ul class="largenav pull-right">
-                            <li class="upper-links"><a class="links" href="#">Home</a></li>
+                            <li class="upper-links"><a class="links" href{{ route('index') }}">Home</a></li>
                             <li class="upper-links"><a class="links" href="#">Sobre</a></li>
                             <li class="upper-links"><a class="links" href="#">Revenda</a></li>
                             <li class="upper-links"><a class="links" href="#">Afiliados</a></li>
@@ -58,11 +58,11 @@
                     <div class="row row2">
                         <div class="col-sm-2">
                             <h2 style="margin:0px; text-align:center;">
-                            <span class="smallnav men"><a href="#" class="logo">HOLLY</a></span>
+                            <span class="smallnav men"><a href="{{ route('index') }}" class="logo">HOLLY</a></span>
                               <span class="smallnav menu" onclick="openNav()">☰</span>
                             </h2>
                             <h1 style="margin:0px;">
-                            <span class="largenav logo"><a href="#" class="logo">HOLLY</a></span>
+                            <span class="largenav logo"><a href="{{ route('index') }}" class="logo">HOLLY</a></span>
                             </h1>
                         </div>
                         <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-10">
