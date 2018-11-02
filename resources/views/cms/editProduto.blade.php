@@ -24,6 +24,15 @@
 <body>
 <h1 class="text-center">Editar produtos</h1>
 <div class="container">
+        @if ($errors->all())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
     <form action="{{ route('produtos.update',$produto->id) }}" enctype="multipart/form-data" method="POST">
         
         {{ method_field('PATCH') }}

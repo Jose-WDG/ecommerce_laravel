@@ -24,6 +24,17 @@
 <body>
     <h1 class="text-center">Cadastra Produtos</h1>
     <div class="container">
+        @if ($errors->all())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+     
+
         <form action="{{ route('produtos.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">

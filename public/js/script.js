@@ -1,29 +1,27 @@
-//toggle menu <===
+
+// $(document).ready(function(){
+//     $("#zoom_09").elevateZoom({
+//         easing : true
+//     });
+// });
 $(document).ready(function(){
-    $(".icons").click(function(){//quando clicar no icone executa
-        $(".menu-item-mobil").toggle();
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
     });
 });
+function openNav() {
+    document.getElementById("mySidenav").style.width = "70%";
+    // document.getElementById("flipkart-navbar").style.width = "50%";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
 
-//login
-$(document).ready(function(){
-    $(".icon-login").click(function(){
-        $("").toggle();
-    });
-});
-
-alturaImg = $('.imgTopo').height(); // altura da imagem, vai servir para sabermos a altura que o scroll tem de andar até a navbar ficar fixa
-     $(window).on('scroll', function() { // cada vez de que fizer scroll o que está dentro desta função vai acontecer
-          if($(window).scrollTop() >= alturaImg) { // se o que percorremos com o scroll for maior ou igual à altura da imagem adicionamos esta classe à navbar
-              $('#navbar').addClass('fixed-menu');
-          }
-          else {
-              $('#navbar').removeClass('fixed-menu');
-          }
-     });
-
-$(document).ready(function(){
-    $("#zoom_09").elevateZoom({
-        easing : true
-    });
-});
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.body.style.backgroundColor = "rgba(0,0,0,0)";
+}

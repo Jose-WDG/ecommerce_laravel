@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\produto;
+use App\produto;
+use Validator;
+use App\Http\Requests\ProdutoRequest;
 class ProdutosControler extends Controller
 {
     /**
@@ -36,17 +38,15 @@ class ProdutosControler extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProdutoRequest $request)
     {
         $novo_produto = new produto;
-
-        if($request->hasFile('imgFrente') ){
+      
+        if($request->hasFile('imgFrente') ):
             $novo_produto->imgFrente = $request->imgFrente->store('public/storage');
-
-        }   
-        else{
+        else:
             $novo_produto->imgFrente = 'Não foi definida uma imagem';
-        }
+        endif;
             
         
         if($request->hasFile('imgCosta') ):
@@ -93,10 +93,20 @@ class ProdutosControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProdutoRequest $request, $id)
     {
-       
+      
         $produto = produto::find($id);
+        if($request->hasFile('imgFrente') ):
+            $$produto->imgFrente = $request->imgFrente->store('public/storage');
+        endif;
+            
+        
+        if($request->hasFile('imgCosta') ):
+            $$produto->imgCosta = $request->imgCosta->store('public/storage');
+        endif;
+        
+   
         $produto->nome = $request->input('nome');
         $produto->descricao = $request->input('descricao');
         $produto->preco = $request->input('preco');
