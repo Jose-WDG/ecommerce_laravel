@@ -15,9 +15,9 @@
 		<!-- Use Font Awesome's  -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 		<!-- css geral -->
-		<link rel="stylesheet" href="{{ url('css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 		<!-- Só carrega esse estilo se for a pagina comprar.php -->
-		<link rel="stylesheet" href="{{ url('css/compra-style.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/compra-style.css') }}">
 		<!-- Include the above in your HEAD tag  -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="row row1">
                         <ul class="largenav pull-right">
-                            <li class="upper-links"><a class="links" href="{{ url('holly') }}">Home</a></li>
+                            <li class="upper-links"><a class="links" href{{ url('holly') }}">Home</a></li>
                             <li class="upper-links"><a class="links" href="#">Sobre</a></li>
                             <li class="upper-links"><a class="links" href="#">Revenda</a></li>
                             <li class="upper-links"><a class="links" href="#">Afiliados</a></li>
@@ -49,7 +49,7 @@
                                 </li>
                               <li class="upper-links dropdown"><a class="links" href="{{ route('entrar') }}">Fazer login</a>
                                     <ul class="dropdown-menu">
-                                    <li class="profile-li"><a class="profile-links" href="{{ route('nova conta') }}">Criar Conta</a></li>
+                                    <li class="profile-li"><a class="profile-links" href="{{ route('novaConta.index') }}">Criar Conta</a></li>
                                     </ul>
                                 </li>
       
@@ -58,11 +58,11 @@
                     <div class="row row2">
                         <div class="col-sm-2">
                             <h2 style="margin:0px; text-align:center;">
-                            <span class="smallnav men"><a href="{{ url('holly') }}" class="logo">HOLLY</a></span>
+                            <span class="smallnav men"><a href="{{ route('index') }}" class="logo">HOLLY</a></span>
                               <span class="smallnav menu" onclick="openNav()">☰</span>
                             </h2>
                             <h1 style="margin:0px;">
-                            <span class="largenav logo"><a href="{{ url('holly') }}" class="logo">HOLLY</a></span>
+                            <span class="largenav logo"><a href="{{ route('index') }}" class="logo">HOLLY</a></span>
                             </h1>
                         </div>
                         <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-10">
@@ -159,7 +159,6 @@
     <main>
         <div class="header">
           </div>
-      
       @yield('conteudo')
     </main> 
     
@@ -273,7 +272,7 @@
     </div>
   </footer>
  
-      <script src="{{ url('js/script.js') }}"></script>
+      <script src="{{ asset('js/script.js') }}"></script>
   @show
   </body>
   </html>

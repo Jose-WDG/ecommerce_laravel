@@ -24,15 +24,18 @@
 <body>
 <h1 class="text-center">Editar produtos</h1>
 <div class="container">
-        @if ($errors->all())
+        
+        @if ( $errors->any())
         <div class="alert alert-danger" role="alert">
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
+          <ul>
+            @foreach ($errors->all() as $erros)
+          <li>{{ $erros }}</li> 
+            @endforeach
+
+          </ul>
+        </div>
+      @endif
+      
     <form action="{{ route('produtos.update',$produto->id) }}" enctype="multipart/form-data" method="POST">
         
         {{ method_field('PATCH') }}
@@ -48,12 +51,12 @@
             <textarea class="form-control"  name="descricao" rows="3" >{{ $produto->descricao }}</textarea>
         </div>
         <div class="form-group">
-            <label for="img-frente">img frente</label>
-            <input name="img-frente" type="file" class="form-control" >
+            <label for="imgFrente">img frente</label>
+            <input name="imgFrente" type="file" class="form-control" value="{{ $produto->imgFrente }}">
           </div>
           <div class="form-group">
-              <label for="img-costa">img costas</label>
-              <input name="img-costa" type="file" class="form-control" >
+              <label for="imgCosta">img costas</label>
+              <input name="imgCosta" type="file" class="form-control" value="{{ $produto->imgCosta }}">
             </div>
         <div class="form-group">
             <label for="preco">preço em R$</label>

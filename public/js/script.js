@@ -1,20 +1,17 @@
-
-// $(document).ready(function(){
-//     $("#zoom_09").elevateZoom({
-//         easing : true
-//     });
-// });
 $(document).ready(function(){
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
+
+//login
+
+    $(".icon-login").click(function(){
+        $("").toggle();
     });
-    
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
+
+    $("#zoom_09").elevateZoom({
+       easing : true
     });
+
 });
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "70%";
     // document.getElementById("flipkart-navbar").style.width = "50%";

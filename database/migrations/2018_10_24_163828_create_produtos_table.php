@@ -18,9 +18,8 @@ class CreateProdutosTable extends Migration
             $table->string('nome');
             $table->string('descricao');
             $table->float('preco', 8, 2);
-            $table->string('imgFrente')->nullable($value = true);
-            $table->string('imgCosta')->nullable($value = true);
-            $table->integer('classificacao');
+            $table->string('img-frente')->nullable($value = true);
+            $table->string('img-costa')->nullable($value = true);
             $table->timestamps();
         });
     }

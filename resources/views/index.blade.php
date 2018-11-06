@@ -1,70 +1,69 @@
 @extends('layout')
 	
 	@section('conteudo')
-
 	<div class="container">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
-			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			  <li data-target="#myCarousel" data-slide-to="1"></li>
-			  <li data-target="#myCarousel" data-slide-to="2"></li>
-		  </ol>
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner carousel-inner-custom">
-			  <div class="item active">
-				<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas.jpg') }}" alt="Modelo1" >
-			  </div>
-			  <div class="item">
-				<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas2.jpg') }}" alt="Modelo2">
-			  </div>
-			  <div class="item">
-				<img class="img-responsive" src="{{ url('storage/imagens/slider/like.jpg') }}" alt="Modelo3" >
-			  </div>
-		  </div>
-		  <!-- Left and right controls -->
-		  <a class="left carousel-control carousel-control-custom " href="#myCarousel" data-slide="prev">
-		  <span class="glyphicon glyphicon-chevron-left glyphicon-custom"></span>
-		  <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="right carousel-control carousel-control-custom" href="#myCarousel" data-slide="next">
-		  <span class="glyphicon glyphicon-chevron-right glyphicon-custom"></span>
-		  <span class="sr-only">Next</span>
-		  </a>
-		</div>
-		<!-- FIM myCarousel -->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner carousel-inner-custom">
+						<div class="item active">
+							<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas.jpg') }}" alt="Modelo1" >
+						</div>
+						<div class="item">
+							<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas2.jpg') }}" alt="Modelo2">
+						</div>
+						<div class="item">
+							<img class="img-responsive" src="{{ url('storage/imagens/slider/like.jpg') }}" alt="Modelo3" >
+						</div>
+				</div>
+				<!-- Left and right controls -->
+				<a class="left carousel-control carousel-control-custom " href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left glyphicon-custom"></span>
+				<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control carousel-control-custom" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right glyphicon-custom"></span>
+				<span class="sr-only">Next</span>
+				</a>
+			</div>
+			<!-- FIM myCarousel -->
 	</div>
 	<!-- FIM CONTAINER SLIDER -->
-<div class="container">
-<div class="row">
-
-  <!--<div class="container">-->
-  <div class="vip-product">
-	  <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
-		<div class="product">
-			<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/Camisetas.jpg') }}" alt="" title=""></a>
-		</div>
-	  </div>
-	  <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
-		<div class="product">
-			<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/legging.jpg') }}" alt="" title=""></a>
-		</div>
-	  </div>
-	  <div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
-		<div class="product">
-			<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/vestidos.jpg') }}" alt="" title=""></a>
-		</div>
-	  </div>
-  </div>
-</div>
-</div>
-<div class="container">
-<!-- CONTAINER -->
-<div class="row">
-  <img class="img-responsive banner-desck" src="{{ url('storage/imagens/Banner/entrega_seguranca.jpg') }}">
-</div>
-</div>
-<!-- FIM CONTAINER -->
+	<div class="container">
+			<div class="row">
+	
+				<!--<div class="container">-->
+				<div class="vip-product">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
+							<div class="product">
+									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/Camisetas.jpg') }}" alt="" title=""></a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
+							<div class="product">
+									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/legging.jpg') }}" alt="" title=""></a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
+							<div class="product">
+									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/vestidos.jpg') }}" alt="" title=""></a>
+							</div>
+						</div>
+				</div>
+			</div>
+	</div>
+	<div class="container">
+			<!-- CONTAINER -->
+			<div class="row">
+				<img class="img-responsive banner-desck" src="{{ url('storage/imagens/Banner/entrega_seguranca.jpg') }}">
+			</div>
+	</div>
+	<!-- FIM CONTAINER -->
 	<div class="container">
 			<!-- CONTAINER -->
 			<div class="row">

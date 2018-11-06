@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProdutoRequest extends FormRequest
+class produtoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,31 +24,20 @@ class ProdutoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome'=>['required', 'max:100','min:3'],
-            'imgFrente'=>['required','mimes:jpeg,bmp,png'],
-            'imgCosta'=>['required','mimes:jpeg,bmp,png'],
-            'preco'=> 'required'
+            'nome' => ['required','max:100','min:10'],
+            'imgFrente'=>['required'],
+            'imgCosta'=>['required'],
+            'preco'=>['required']
         ];
-    }
-
-    public function withValidator($validator)
-    {
-        $validator->after(function ($validator)
-        {
-            if(strpos($this->nome,'-'))
-            {
-                $validator->errors()->add('nome','O campo nome não pode conter caracteres como (- * $ # % @) ');
-            }
-        });
     }
 
     public function messages()
     {
         return [
-            'nome.required' => "O campo nome do produto é obrigatório",
-            'imgFrente.required' => "Imagem da Frente do produto é obrigatória",
-            'imgCosta.required' => "Imagem da Costas do produto é obrigatória",
-            'preco.required' => "O preço do produto é obrigatório"
+            'nome.required' => "O campo nome do produto é obrigatório.",
+            'imgFrente.required' => "O produto deve conter imagem de frente.",
+            'imgCosta.required' => "O produto deve conter imagem de costas.",
+            'preco.required' => "Preço é obrigatório."
         ];
     }
 }

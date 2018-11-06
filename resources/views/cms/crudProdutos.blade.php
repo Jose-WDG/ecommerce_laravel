@@ -24,21 +24,52 @@
 <body>
     <h1 class="text-center">Cadastra Produtos</h1>
     <div class="container">
-        @if ($errors->all())
-        <div class="alert alert-danger" role="alert">
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
+      @if ( $errors->any())
+        <div class="aler alert-danger">
+          <ul>
+            @foreach ($errors->all() as $erros)
+          <li>{{ $erros }}</li> 
+            @endforeach
+
+          </ul>
+        </div>
+      @endif
+
+      @if(  session('sucesso')  )
+        <div class="alert alert-success" role="alert">
+            {{ session('sucesso') }}
+        </div>
+       
+      @endif
+      @if(  session('erro')  )
+      <div class="alert alert-success" role="alert">
+          {{ session('erro') }}
+      </div>
      
+      @endif
+
+      @if(  session('editado')  )
+        <div class="alert alert-info" role="alert">
+            {{ session('editado') }}
+        </div>
+      @endif
+
+      @if(  session('erroedit')  )
+      <div class="alert alert-info" role="alert">
+          {{ session('erroedit') }}
+      </div>
+      @endif
+
+      @if(  session('deletado')  )
+      <div class="alert alert-warning" role="alert">
+          {{ session('deletado') }}
+      </div>
+      @endif
 
         <form action="{{ route('produtos.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
-              <label for="nome">Nome do Produto</label>
+              <label for="nome">Nome do Produto*(obrigatório)</label>
               <input name="nome" type="text" class="form-control"  placeholder="Nome do produto">
             </div>
           
@@ -48,16 +79,16 @@
 
             </div>
              <div class="form-group">
-              <label for="imgFrente">img frente</label>
+              <label for="imgFrente">img frente*(obrigatório)</label>
               <input name="imgFrente" type="file" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="imgCosta">img costas</label>
+                <label for="imgCosta">img costas*(obrigatório)</label>
                 <input name="imgCosta" type="file" class="form-control" >
               </div>
             <div class="form-group">
-                <label for="preco">preço em R$</label>
-                <input type="number" class="form-control" name="preco">
+                <label for="preco">preço em R$*(obrigatório)</label>
+                <input type="number" step="0.01" class="form-control" name="preco">
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-success">Cadastrar</button>

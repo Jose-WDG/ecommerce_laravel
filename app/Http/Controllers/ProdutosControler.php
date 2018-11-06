@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\produtoRequest;
+use App\Http\Requests\editRequest;
 use App\produto;
 use Validator;
-use App\Http\Requests\ProdutoRequest;
 class ProdutosControler extends Controller
 {
     /**
@@ -38,10 +39,11 @@ class ProdutosControler extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProdutoRequest $request)
+    public function store(produtoRequest $request)
     {
+        
         $novo_produto = new produto;
-      
+
         if($request->hasFile('imgFrente') ):
             $novo_produto->imgFrente = $request->imgFrente->store('public/storage');
         else:
@@ -58,8 +60,13 @@ class ProdutosControler extends Controller
         $novo_produto->nome = $request->input('nome');
         $novo_produto->descricao = $request->input('descricao');
         $novo_produto->preco = $request->input('preco');
-        $novo_produto->save();
-        return redirect()->route('produtos.index').'<script>alert("produto criado com sucesso!")</script>';
+        
+        if($novo_produto->save()):
+            $request->session()->flash('sucesso','Produto cadastrado com sucesso!');
+        else:
+            $request->session()->flash('erro','erro ao cadastrar produtos!');
+        endif;
+        return redirect()->route('produtos.index');
 
     }
 
@@ -93,25 +100,20 @@ class ProdutosControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProdutoRequest $request, $id)
+    public function update(editRequest $request, $id)
     {
-      
+        
         $produto = produto::find($id);
-        if($request->hasFile('imgFrente') ):
-            $$produto->imgFrente = $request->imgFrente->store('public/storage');
-        endif;
-            
-        
-        if($request->hasFile('imgCosta') ):
-            $$produto->imgCosta = $request->imgCosta->store('public/storage');
-        endif;
-        
-   
         $produto->nome = $request->input('nome');
         $produto->descricao = $request->input('descricao');
         $produto->preco = $request->input('preco');
-        $produto->save();
-        return redirect()->route('produtos.index').'<script>alert("Editado com sucesso!")</script>';
+        
+        if($produto->save()):
+            $request->session()->flash('editado','Produto editado com sucesso!');
+        else:
+            $request->session()->flash('erro','erro ao editar produto!');
+        endif;
+        return redirect()->route('produtos.index');
     }
 
     /**

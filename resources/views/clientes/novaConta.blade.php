@@ -3,81 +3,85 @@
 @section('conteudo')
 <div class="container container-custom">
     <h2>Criar Conta</h2>
-    <form class="form-horizontal-custom">
+    <form class="form-horizontal-custom" action="{{ route('novaConta.store') }} " method="POST">
+      {{ csrf_field() }}
       <div class="form-group">
         <div class="col-lg-12">
           <div class="form-check form-check-inline">
             <label for="exampleInputEmail1">Comprar Como;</label><br>
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Pessoa Física</label>
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Pessoa Juridica</label>
+            <input class="form-check-input" type="checkbox" id="tipoDePessoa" value="option1">
+            <label class="form-check-label" for="tipoDePessoa">Pessoa Física</label>
+            <input class="form-check-input" type="checkbox" id="tipoDePessoa" value="option1">
+            <label class="form-check-label" for="tipoDePessoa">Pessoa Juridica</label>
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="col-lg-12">
-          <label for="exampleInputEmail1">Nome Completo:</label>
-          <input type="text" class="form-control" id="nome" aria-describedby="Nome completo" placeholder="Nome completo">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" class="form-control" name="nome" id="nome" aria-describedby="Nome completo" placeholder="Nome completo">
         </div>
       </div>
   
       <div class="form-group">
         <div class="col-lg-12">
-        <label for="exampleInputPassword1">E-mail:</label>
-        <input type="email" class="form-control" id="email" placeholder="E-mail">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
       </div>
     </div>
+
     <div class="form-group">
       <div class="col-lg-12">
-        <label for="exampleInputEmail1">CPF:</label>
-        <input type="number" class="form-control" id="nome" aria-describedby="CPF" placeholder="">
-      </div>
-    </div>
-  
-    <div class="form-group">
-      <div class="col-lg-12">
-        <label for="exampleInputEmail1">Nascimento:</label>
-        <input type="date" class="form-control" id="nome" aria-describedby="Nome completo" placeholder="Data de nascimento">
+        <label for="cpf">CPF:</label>
+        <input type="number" class="form-control" name="cpf" id="nome" aria-describedby="CPF" placeholder="">
       </div>
     </div>
   
     <div class="form-group">
       <div class="col-lg-12">
-        <label for="exampleInputEmail1">Celular:</label>
-        <input type="text" class="form-control" id="nome" aria-describedby="numero-celular" placeholder="(00) 00000000">
+        <label for="dataDeNascimento">Nascimento:</label>
+        <input type="text" class="form-control" name="dataDeNascimento" id="dataDeNascimento">
       </div>
     </div>
   
     <div class="form-group">
       <div class="col-lg-12">
-        <label for="exampleInputEmail1">Outro Telefone:</label>
-        <input type="text" class="form-control" id="nome" aria-describedby="Numero-telefone" placeholder="(00) 00000000">
+        <label for="celular">Celular:</label>
+        <input type="text" class="form-control" name="celular" id="celular" aria-describedby="numero-celular" placeholder="(00) 00000000">
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <div class="col-lg-12">
+        <label for="outroTelefone">Outro Telefone:</label>
+        <input type="text" class="form-control" name="outroTelefone" id="outroTelefone" aria-describedby="Numero-telefone" placeholder="(00) 00000000">
       </div>
     </div>
       <div class="form-group">
         <div class="col-lg-12">
           <div class="form-check form-check-inline">
-            <label for="exampleInputEmail1">Gênero:</label><br>
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Feminino</label>
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
+            <label for="genero">Gênero:</label><br>
+            <input class="form-check-input" type="checkbox" id="genero" value="option1">
+            <label class="form-check-label" for="genero">Feminino</label>
+            <input class="form-check-input" type="checkbox" id="genero" value="option1">
+            <label class="form-check-label" for="genero">Masculino</label>
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-lg-12">
-          <label for="exampleInputEmail1">Senha:</label>
-          <input type="password" class="form-control" id="senha" aria-describedby="senha" placeholder="***********">
+          <label for="senha">Senha:</label>
+          <input type="password" class="form-control" name="senha" id="senha" aria-describedby="senha" placeholder="***********">
         </div>
       </div>
       <div class="form-group">
         <div class="col-lg-12">
-          <label for="exampleInputEmail1">Confirma Senha:</label>
-          <input type="password" class="form-control" id="senha" aria-describedby="confirma-senha" placeholder="***********">
+          <label for="senhaConfirme">Confirma Senha:</label>
+          <input type="password" class="form-control" name="senhaConfirme" id="senha" aria-describedby="confirma-senha" placeholder="***********">
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-lg-12">
           <div class="form-check">
@@ -88,6 +92,7 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-lg-12">
           <div class="form-check">
@@ -98,6 +103,7 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-lg-12">
           <div class="form-check">

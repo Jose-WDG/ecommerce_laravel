@@ -957,6 +957,76 @@
         ]
     },
     {
+        "name": "laravelcollective/html",
+        "version": "v5.7.1",
+        "version_normalized": "5.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "777b6d390811ba249255ed5750bf17a019cd88a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/777b6d390811ba249255ed5750bf17a019cd88a5",
+            "reference": "777b6d390811ba249255ed5750bf17a019cd88a5",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "5.7.*",
+            "illuminate/routing": "5.7.*",
+            "illuminate/session": "5.7.*",
+            "illuminate/support": "5.7.*",
+            "illuminate/view": "5.7.*",
+            "php": ">=7.1.3"
+        },
+        "require-dev": {
+            "illuminate/database": "5.7.*",
+            "mockery/mockery": "~1.0",
+            "phpunit/phpunit": "~7.1"
+        },
+        "time": "2018-09-05T18:32:53+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.7-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Collective\\Html\\HtmlServiceProvider"
+                ],
+                "aliases": {
+                    "Form": "Collective\\Html\\FormFacade",
+                    "Html": "Collective\\Html\\HtmlFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "https://laravelcollective.com"
+    },
+    {
         "name": "league/flysystem",
         "version": "1.0.48",
         "version_normalized": "1.0.48.0",
@@ -2199,6 +2269,165 @@
             "phpunit",
             "testing",
             "xunit"
+        ]
+    },
+    {
+        "name": "predis/predis",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+            "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2016-06-16T16:22:20+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Predis\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
+        ]
+    },
+    {
+        "name": "prettus/l5-repository",
+        "version": "2.6.32",
+        "version_normalized": "2.6.32.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/andersao/l5-repository.git",
+            "reference": "f6ebfffee80a38e1d2dcf479e70b1a9ead397c24"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/andersao/l5-repository/zipball/f6ebfffee80a38e1d2dcf479e70b1a9ead397c24",
+            "reference": "f6ebfffee80a38e1d2dcf479e70b1a9ead397c24",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "~5.0",
+            "illuminate/console": "~5.0",
+            "illuminate/database": "~5.0",
+            "illuminate/filesystem": "~5.0",
+            "illuminate/http": "~5.0",
+            "illuminate/pagination": "~5.0",
+            "illuminate/support": "~5.0",
+            "prettus/laravel-validation": "1.1.*"
+        },
+        "suggest": {
+            "league/fractal": "Required to use the Fractal Presenter (0.12.*).",
+            "prettus/laravel-validation": "Required to provide easy validation with the repository (1.1.*)",
+            "robclancy/presenter": "Required to use the Presenter Model (1.3.*)"
+        },
+        "time": "2018-01-27T15:53:20+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Prettus\\Repository\\": "src/Prettus/Repository/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Anderson Andrade",
+                "email": "contato@andersonandra.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "Laravel 5 - Repositories to  the database layer",
+        "keywords": [
+            "cache",
+            "eloquent",
+            "laravel",
+            "model",
+            "repository"
+        ]
+    },
+    {
+        "name": "prettus/laravel-validation",
+        "version": "1.1.5",
+        "version_normalized": "1.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/andersao/laravel-validator.git",
+            "reference": "d9eb401fb3518a890b117e83bd25a4109fcdb704"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/d9eb401fb3518a890b117e83bd25a4109fcdb704",
+            "reference": "d9eb401fb3518a890b117e83bd25a4109fcdb704",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.4",
+            "illuminate/validation": "~5.4",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-08-28T23:28:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Prettus\\Validator\\": "src/Prettus/Validator/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Anderson Andrade",
+                "email": "contato@andersonandra.de"
+            }
+        ],
+        "description": "Laravel Validation Service",
+        "keywords": [
+            "laravel",
+            "service",
+            "validation"
         ]
     },
     {
