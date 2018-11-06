@@ -108,6 +108,9 @@
 				</li>
 				@endforeach
 			</ul>
+			{{-- <div class="text-center paginate">
+					{{ $produtos_destaque->links() }}
+					</div> --}}
 			</div>
 	</div>
 	<!-- FIM CONTAINER -->

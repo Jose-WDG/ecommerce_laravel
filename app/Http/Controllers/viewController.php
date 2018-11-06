@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 class viewController extends Controller
 {
     /**
@@ -37,6 +37,9 @@ class viewController extends Controller
     {
         return view('clientes.faq');  
     }
-   
+    public function sair(){
+        Auth::logout();
+        return redirect()->route('index');
+    }
    
 }

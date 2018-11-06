@@ -26,6 +26,7 @@
     <header>
       @section('menu')
         <nav class="navbar navbar-default navbar-custom">
+            
             <div class="flipkart-navbar">
                 <div class="container">
                     <div class="row row1">
@@ -37,9 +38,12 @@
                             <li class="upper-links"><a class="links" href="#">Informações</a></li>
                             <li class="upper-links"><a class="links" href="#">Contato</a></li>
                             <li class="upper-links"><a class="links" href="#"></a></li>
+                            @guest
+                            @else
                             <li class="upper-links"><a class="links" href="#">Meus dados</a></li>
                             <li class="upper-links"><a class="links" href="#">Meus pedidos</a></li>
                             <li class="upper-links"><a class="links" href="#">Lista de desejos</a></li>
+                            @endguest  
                             <li class="upper-links">
                                     <a  href="#">
                                         <svg class="" width="16px" height="12px" style="overflow: visible;">
@@ -47,13 +51,37 @@
                                         </svg>
                                     </a>
                                 </li>
-                              <li class="upper-links dropdown"><a class="links" href="{{ route('entrar') }}">Fazer login</a>
-                                    <ul class="dropdown-menu">
-                                    <li class="profile-li"><a class="profile-links" href="{{ route('novaConta.index') }}">Criar Conta</a></li>
-                                    </ul>
-                                </li>
-      
-                        </ul>
+                              <li class="upper-links dropdown">
+                        @guest
+                                  <a class="nav-link links" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <ul class="dropdown-menu">
+                                  <li class="nav-item">
+                                    @if (Route::has('register'))
+                                        <a class="nav-link links" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endif
+                                  </li>
+                                </ul>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle links" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item links" href="{{ route('sair') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('sair') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest                  
+                            </li>
+                          </ul>
                     </div>
                     <div class="row row2">
                         <div class="col-sm-2">
@@ -91,13 +119,47 @@
                 <div class="container" style="background-color: #000; padding-top: 10px;">
                     <span class="sidenav-heading logo">HOLLY</span>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                </div>
+                    </div> 
+                    @guest
+                              <a class="nav-link links" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            
+                              
+                                @if (Route::has('register'))
+                                    <a class="nav-link links" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                            
+                            
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle links" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item links" href="{{ route('sair') }}"
+                                  onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('sair') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest        
                 <a href="#">masculino</a>
                 <a href="#">feminino</a>
                 <a href="#">infantil</a>
                 <a href="#">esporte</a>
                 <a href="#">inspiracao</a>
-                  <a href="#">outlet</a>
+                <a href="#">outlet</a>
+                @guest
+                @else
+                <a class="links" href="#">Meus dados</a>
+                <a class="links" href="#">Meus pedidos</a>
+                <a class="links" href="#">Lista de desejos</a>
+                @endguest 
       
             </div>
         <div class="container">
@@ -158,7 +220,8 @@
     
     <main>
         <div class="header">
-          </div>
+          </div><br>
+          
       @yield('conteudo')
     </main> 
     
