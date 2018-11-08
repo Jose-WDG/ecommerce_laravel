@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class viewController extends Controller
@@ -38,5 +38,9 @@ class viewController extends Controller
         return view('clientes.faq');  
     }
    
-   
+   public function sair(){
+       Auth::logout();
+       return redirect()->route('index');
+
+   }
 }

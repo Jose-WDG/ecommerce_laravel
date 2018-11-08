@@ -33,7 +33,6 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Prettus\\Validator\\' => array($vendorDir . '/prettus/laravel-validation/src/Prettus/Validator'),
     'Prettus\\Repository\\' => array($vendorDir . '/prettus/l5-repository/src/Prettus/Repository'),
-    'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Opis\\Closure\\' => array($vendorDir . '/opis/closure/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
