@@ -16,12 +16,12 @@ class ProdutosControler extends Controller
      */
     public function index()
     {
-        $produtos = \App\produto::get();
+        $produtos = produto::get();
         return view('cms.crudProdutos',compact('produtos'));
         
     
     }
-
+   
     /**
      * Retorna a view de criação 
      *

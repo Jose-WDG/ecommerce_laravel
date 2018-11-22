@@ -6,20 +6,20 @@
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
+						{{-- <li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li> --}}
 				</ol>
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner carousel-inner-custom">
 						<div class="item active">
-							<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas.jpg') }}" alt="Modelo1" >
+							<img class="img-responsive" src="{{ url('storage/imagens/slider/baner.jpg') }}" alt="Modelo1" >
 						</div>
-						<div class="item">
+						{{-- <div class="item">
 							<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas2.jpg') }}" alt="Modelo2">
 						</div>
 						<div class="item">
 							<img class="img-responsive" src="{{ url('storage/imagens/slider/like.jpg') }}" alt="Modelo3" >
-						</div>
+						</div> --}}
 				</div>
 				<!-- Left and right controls -->
 				<a class="left carousel-control carousel-control-custom " href="#myCarousel" data-slide="prev">

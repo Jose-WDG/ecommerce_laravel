@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProdutosTable extends Migration
+class CreatePedidoProdutosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,22 @@ class CreateProdutosTable extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('pedido_produtos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('descricao');
-            $table->float('preco', 8, 2);
-            $table->string('imgFrente')->nullable($value = true);
-            $table->string('imgCosta')->nullable($value = true);
+            $table->enum('status', ['RE', 'PA','CA']);//reservado, pago, cancelado
+            $table->decimal('valor', 8, 2)->default(0);
+            $table->decimal('desconto', 8, 2)->default(0);
             $table->timestamps();
         });
     }
 
-    /**
+    /** "
      * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('pedido_produtos');
     }
 }

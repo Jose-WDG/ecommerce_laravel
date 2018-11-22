@@ -102,12 +102,15 @@
                         </div>
                         <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-10">
                             <div class="row">
-                                <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Digite o nome do produto..." name="">
-                                <button class="flipkart-navbar-button col-md-1 col-xs-2">
-                                    <svg width="15px" height="15px">
-                                        <i class="fas fa-search"></i>
-                                    </svg>
-                                </button>
+                            <form action="{{ url('holly/pesquisa')}}" method="POST">
+                                    @csrf
+                                        <input class="flipkart-navbar-input col-xs-10" type="" placeholder="Digite o nome do produto..." name="criterio">
+                                        <button type="submit" class="flipkart-navbar-button col-md-1 col-xs-2">
+                                            <svg width="15px" height="15px">
+                                                <i class="fas fa-search"></i>
+                                            </svg>
+                                        </button>
+                                </form>
                             </div>
                         </div>
                         <div class="cart largenav col-sm-2">
@@ -127,61 +130,71 @@
                     <span class="sidenav-heading logo">HOLLY</span>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 </div>
-                <a href="#">masculino</a>
-                <a href="#">feminino</a>
-                <a href="#">infantil</a>
-                <a href="#">esporte</a>
-                <a href="#">inspiracao</a>
-                  <a href="#">outlet</a>
+                <a href="#">CAMISETAS</a>
+                <a href="#">BLUSAS</a>
+                <a href="#">REGATAS</a>
+                <a href="#">LEGGING</a>
+                <a href="#">VESTIDOS</a>
+                  <a href="#">OUTLET</a>
       
             </div>
         <div class="container">
           <ul class="nav navbar-nav nav-custom">
-      
-            <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 um">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">MASCULINO</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
-            </li>
-      
-      
+                        <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 um">
+                        <form action="{{ url('holly/categoria')}}" method="POST">
+                            @csrf
+                                <button type="submit" 
+                                class="links text-center" style="text-transform: uppercase;color:#000;
+                                background:#fff;border:none;" name="camiseta" value="camiseta">CAMISETAS</button>
+                            </form>
+                        </li>
+
             <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 dois">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">FEMININO</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
+                    <form action="{{ url('holly/categoria')}}" method="POST">
+                        @csrf
+                            <button type="submit" 
+                            class="links text-center" style="text-transform: uppercase;color:#000;
+                            background:#fff;border:none;" name="camiseta" value="blusa">BLUSA</button>
+                        </form>
             </li>
       
       
             <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 tres">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">INFANTIL</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
+                    <form action="{{ url('holly/categoria')}}" method="POST">
+                        @csrf
+                            <button type="submit" 
+                            class="links text-center" style="text-transform: uppercase;color:#000;
+                            background:#fff;border:none;" name="camiseta" value="regata">REGATA</button>
+                        </form>
             </li>
       
       
             <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 quatro">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">ESPORTE</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
+                    <form action="{{ url('holly/categoria')}}" method="POST">
+                        @csrf
+                            <button type="submit" 
+                            class="links text-center" style="text-transform: uppercase;color:#000;
+                            background:#fff;border:none;" name="camiseta" value="laging">LEGING</button>
+                        </form>
             </li>
       
             <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 cinco">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">INSPIRAÇÃO</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
+                    <form action="{{ url('holly/categoria')}}" method="POST">
+                        @csrf
+                            <button type="submit" 
+                            class="links text-center" style="text-transform: uppercase;color:#000;
+                            background:#fff;border:none;" name="camiseta" value="vestido">VESTIDOS</button>
+                        </form>
             </li>
       
       
             <li class="upper-links dropdown link col-lg-2 col-md-2 col-sm-12 six">
-              <a class="links text-center" href="login.php" style="text-transform: uppercase;">OUTLET</a>
-                <ul class="dropdown-menu">
-                    <li class="profile-li"><a class="profile-links" href="#">link</a></li>
-                </ul>
+                    <form action="{{ url('holly/categoria')}}" method="POST">
+                        @csrf
+                            <button type="submit" 
+                            class="links text-center" style="text-transform: uppercase;color:#000;
+                            background:#fff;border:none;" name="camiseta" value="outlet">OUTLET</button>
+                        </form>
             </li>
             <hr />
       

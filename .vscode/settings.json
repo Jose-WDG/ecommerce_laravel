@@ -1,0 +1,16 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2500,
+  "php.suggest.basic": true,
+  "php.validate.enable": true,
+  "editor.tabSize": 2,
+  "editor.tabCompletion": true,
+  "workbench.panel.location": "bottom",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "emmet.includeLanguages": {
+      "blade": "html"
+  },
+  "emmet.triggerExpansionOnTab": true
+}

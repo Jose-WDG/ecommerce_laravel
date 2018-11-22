@@ -18,7 +18,29 @@ class ListarProdutos extends Controller
         return view('index',compact('produtos','produtos_destaque'));
     }
    
-
+    public function busca(Request $request)
+    {
+        
+        $resultado_pesquisa = produto::where('nome','LIKE','%'.$request->criterio.'%')->get();
+        return view('resul',
+            [
+                'resul'=>$resultado_pesquisa,
+                'nome_pesquisado'=>$request->criterio
+            ]
+        );
+        
+    }
+    public function categoria(Request $request)
+    {
+        
+        $resultado_pesquisa = produto::where('nome','LIKE','%'.$request->camiseta.'%')->get();
+        return view('categoria',
+        [
+            'resul'=>$resultado_pesquisa,
+            'categoria'=>$request->camiseta
+        ]
+    );
+    }
       /**
      * Comprar produto
      *
