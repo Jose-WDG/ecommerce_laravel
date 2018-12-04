@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('conteudo')
+<div style="margin-top:20px;"></div>
 <div class="container">
         <div class="form-group">
           <div class="col-md-offset-3 col-lg-6 text-center">
@@ -52,15 +53,15 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                    {{ __('Esqueceu a senha?') }}
                                 </a>
                             </div>
                         </div>
                     </form>
                     <div class="row text-center">
                             <legend class="legenda">Fazer login com:</legend>
-                            <a class="icons-socials" href="#"><img src="{{ url('storage/imagens/icons/facebook-holly.png') }}"></a>
-                            <a class="icons-socials" href="#"><img src="{{ url('storage/imagens/icons/twitter.png') }}"></a>
+                            <a class="icons-socials" href="#"><img src="{{ url('imagens/icons/facebook-holly.png') }}"></a>
+                            <a class="icons-socials" href="#"><img src="{{ url('imagens/icons/twitter.png') }}"></a>
                           </div>
                 
             </div>

@@ -17,6 +17,7 @@ class CreateProdutosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('descricao');
+            $table->foreign('Categoria_id')->references('id')->on('categorias');
             $table->float('preco', 8, 2);
             $table->string('imgFrente')->nullable($value = true);
             $table->string('imgCosta')->nullable($value = true);

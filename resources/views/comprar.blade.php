@@ -48,13 +48,19 @@
                   até <span>3x de R$ {{ number_format($produto->preco/3, 2) }} sem juros</span> ou <span>R$ {{ $produto->preco}} via Depósito</span></p>
               </div>
               <div class="area-btn">
-                  <a class="btn-comprar col-lg-12" href="#">
-                  <i class="fas fa-lock" style="margin-right:5px;"></i>Comprar</a>
+                    <form action="{{ route('Carrinho.adicionar') }}" method="POST">
+                            {{csrf_field()}}
+                            <input type="hidden" name="id" value="{{ $produto->id }}">
+                            <button class="btn-comprar col-lg-12" data-dalay="50" data-toggle="tooltip" title="O produto será adicionado ao seu carrinho" style="border:none;">
+                                <span style="color:#fff;"><i class="fas fa-lock" style="margin-right:5px;"></i>Comprar<span>
+                            </button>
+                        </form>
+                  
               </div>
               <div class="btn-parcela">
               <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle btn-custom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img class="btn-img-parcela" src=" {{ url('storage/imagens/site/btn-pagseguro-cards.png') }}" ><span>Parcelas</span>
+                      <img class="btn-img-parcela" src=" {{ url('imagens/site/btn-pagseguro-cards.png') }}" ><span>Parcelas</span>
                   </button>
                   <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
                       <ul>

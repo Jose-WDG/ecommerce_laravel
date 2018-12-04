@@ -33,7 +33,7 @@ class ListarProdutos extends Controller
     public function categoria(Request $request)
     {
         
-        $resultado_pesquisa = produto::where('nome','LIKE','%'.$request->camiseta.'%')->get();
+        $resultado_pesquisa = produto::where('categoria','LIKE','%'.$request->camiseta.'%')->get();
         return view('categoria',
         [
             'resul'=>$resultado_pesquisa,

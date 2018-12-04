@@ -11,10 +11,17 @@ html body
 }
 .conainter-admin
 {
-    width: 100%;
+    width: 82%;
     height: 100%;
+    float: right;
     display: block;
-    background-color: #000;
+  
+}
+label{
+  font-size: 1.2rem;
+}
+.nome-list{
+  font-size: 1.2rem;
 }
 .nav-side-menu {
     overflow: auto;
@@ -127,6 +134,14 @@ html body
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+  }
+  .link-menu-admin{
+    color: #e1ffff;
+    text-decoration: none;
+  }
+  .link-menu-admin:hover{
+    color: #e1ffff;
+    text-decoration: none;
   }
   @media (max-width: 767px) {
     .nav-side-menu {

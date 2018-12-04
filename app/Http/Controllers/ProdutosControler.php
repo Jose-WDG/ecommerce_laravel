@@ -17,9 +17,8 @@ class ProdutosControler extends Controller
     public function index()
     {
         $produtos = produto::get();
-        return view('cms.crudProdutos',compact('produtos'));
+        return view('cms.admin.janelas.crudProdutos',compact('produtos'));
         
-    
     }
    
     /**
@@ -59,6 +58,7 @@ class ProdutosControler extends Controller
         
         $novo_produto->nome = $request->input('nome');
         $novo_produto->descricao = $request->input('descricao');
+        $novo_produto->categoria = $request->input('categoria');
         $novo_produto->preco = $request->input('preco');
         
         if($novo_produto->save()):
@@ -106,6 +106,7 @@ class ProdutosControler extends Controller
         $produto = produto::find($id);
         $produto->nome = $request->input('nome');
         $produto->descricao = $request->input('descricao');
+        $novo_produto->categoria = $request->input('categoria');
         $produto->preco = $request->input('preco');
         
         if($produto->save()):

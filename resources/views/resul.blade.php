@@ -31,14 +31,17 @@
               </div>
               </div>
               <div class="preco-produto">
-              <div class="valor-total">R$ {{ number_format($produto->preco, 2) }}</div>
-              <div class="parcela-valor">
-              até <span>3x</span> de <span>R$ {{ number_format($produto->preco/3, 2) }}</span> sem juros ou <br><span>R$ {{number_format($produto->preco, 2) }}</span> via Depósito
+                <div class="valor-total">R$ {{ number_format($produto->preco, 2) }}</div>
+                <div class="parcela-valor">
+                até <span>3x</span> de <span>R$ {{ number_format($produto->preco/3, 2) }}</span> sem juros ou <br><span>R$ {{number_format($produto->preco, 2) }}</span> via Depósito
+                </div>
+              <div class="comprar-produto">
+                <div class="comprar-produto">
+                  <a class="btn-vermais" href="{{ route('produto.exibir',$produto->id) }}" data-dalay="50" data-toggle="tooltip" title="O produto será adicionado ao seu carrinho" style="border:none;">
+                    Ver mais</a>
               </div>
-            <div class="comprar-produto">
-            <a class="btn-vermais" href="{{ route('comprar.show',$produto->id) }}">VER MAIS</a>
-            </div>
               </div>
+                </div>
             </div>
           </div>
           </div>

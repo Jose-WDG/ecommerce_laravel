@@ -194,7 +194,7 @@ body,html{height: 100vh;}
     padding-top: 0px;
 }
 
-.sidenav a {
+.sidenav button {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -202,7 +202,14 @@ body,html{height: 100vh;}
     display: block;
     transition: 0.3s
 }
-
+.sidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -284,7 +291,8 @@ body,html{height: 100vh;}
     position: absolute;
     top: 0;
     width: 100%;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 3000px;
     left: 0;
 }
 
@@ -517,9 +525,10 @@ hr {
 .produto-box{
     height: 510px;
     border: solid 3px #0000;
-
+    max-width: 300px;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 }
 .produto-box:hover{
     border: solid 3px #00000036;
@@ -534,7 +543,8 @@ hr {
 .produto-img{
     position: relative;
     width: 100%;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 300px;
     z-index: 1;
 }
 

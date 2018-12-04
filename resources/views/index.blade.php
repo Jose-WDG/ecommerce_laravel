@@ -12,7 +12,7 @@
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner carousel-inner-custom">
 						<div class="item active">
-							<img class="img-responsive" src="{{ url('storage/imagens/slider/baner.jpg') }}" alt="Modelo1" >
+							<img class="img-responsive" src="{{ url('imagens/slider/baner.jpg') }}" alt="Modelo1" >
 						</div>
 						{{-- <div class="item">
 							<img class="img-responsive" src="{{ url('storage/imagens/slider/camisetas2.jpg') }}" alt="Modelo2">
@@ -34,6 +34,7 @@
 			<!-- FIM myCarousel -->
 	</div>
 	<!-- FIM CONTAINER SLIDER -->
+
 	<div class="container">
 			<div class="row">
 	
@@ -41,26 +42,27 @@
 				<div class="vip-product">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
 							<div class="product">
-									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/Camisetas.jpg') }}" alt="" title=""></a>
+									<a href="#" ><img class="img-categoria" src="{{ url('imagens/img-categoria/Camisetas.jpg') }}" alt="" title=""></a>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
 							<div class="product">
-									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/legging.jpg') }}" alt="" title=""></a>
+									<a href="#" ><img class="img-categoria" src="{{ url('imagens/img-categoria/legging.jpg') }}" alt="" title=""></a>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xm-12">
 							<div class="product">
-									<a href="#" ><img class="img-categoria" src="{{ url('storage/imagens/img-categoria/vestidos.jpg') }}" alt="" title=""></a>
+									<a href="#" ><img class="img-categoria" src="{{ url('imagens/img-categoria/vestidos.jpg') }}" alt="" title=""></a>
 							</div>
 						</div>
 				</div>
 			</div>
 	</div>
+
 	<div class="container">
 			<!-- CONTAINER -->
 			<div class="row">
-				<img class="img-responsive banner-desck" src="{{ url('storage/imagens/Banner/entrega_seguranca.jpg') }}">
+				<img class="img-responsive banner-desck" src="{{ url('imagens/Banner/entrega_seguranca.jpg') }}">
 			</div>
 	</div>
 	<!-- FIM CONTAINER -->
@@ -74,8 +76,8 @@
 			<li>
 					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
 					<div class="produto-box">
-						<img class="produto-img" src="{{ asset('storage/'.str_after($produto->imgFrente,'public/')) }}">
-						<img class="img-costa" src="{{ asset('storage/'.str_after($produto->imgCosta,'public/')) }}">
+						<img width="270" height="270" class="produto-img" src="{{ asset('storage/'.str_after($produto->imgFrente,'public/')) }}">
+						<img width="270" height="270" class="img-costa" src="{{ asset('storage/'.str_after($produto->imgCosta,'public/')) }}">
 						<div class="produto-descricao">
 						<div class="nome-produto text-center"><a href="#">{{ $produto->nome }}</a></div>
 							<div class="avalicao-produto">
@@ -99,7 +101,11 @@
 							até <span>3x</span> de <span>R$ {{ number_format($produto->preco/3, 2) }}</span> sem juros ou <br><span>R$ {{number_format($produto->preco, 2) }}</span> via Depósito
 							</div>
 						<div class="comprar-produto">
-						<a class="btn-vermais" href="{{ route('comprar.show',$produto->id) }}">VER MAIS</a>
+							<div class="comprar-produto">
+								<a class="btn-vermais" href="{{ route('produto.exibir',$produto->id) }}" 
+								data-dalay="50" data-toggle="tooltip" title="O produto será adicionado ao seu carrinho" style="border:none;">
+									Ver mais</a>
+						</div>
 						</div>
 							</div>
 						</div>
@@ -120,10 +126,10 @@
 						
 			
 			<li>
-					<div class=" col-lg-3 col-md-3 col-sm-6 col-xm-12">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xm-12" >
 					<div class="produto-box">
-						<img class="produto-img" src="{{ asset('storage/'.str_after( $produto_destaque->imgFrente,'public/')) }}">
-						<img class="img-costa" src="{{ asset('storage/'.str_after( $produto_destaque->imgCosta,'public/')) }}">
+						<img width="270" height="270" class="produto-img" src="{{ asset('storage/'.str_after( $produto_destaque->imgFrente,'public/')) }}">
+						<img width="270" height="270" class="img-costa" src="{{ asset('storage/'.str_after( $produto_destaque->imgCosta,'public/')) }}">
 						<div class="produto-descricao">
 						<div class="nome-produto text-center"><a href="#">{{ $produto_destaque->nome }}</a></div>
 							<div class="avalicao-produto">
@@ -142,12 +148,14 @@
 							</div>
 							</div>
 							<div class="preco-produto">
-							<div class="valor-total">R$ 64,80</div>
-							<div class="parcela-valor">
-							até <span>3x</span> de <span>R$ 21,60</span> sem juros ou <span>R$ 58,32</span> via Depósito
-							</div>
+								<div class="valor-total">R$ {{ number_format($produto_destaque->preco, 2) }}</div>
+								<div class="parcela-valor">
+								até <span>3x</span> de <span>R$ {{ number_format($produto_destaque->preco/3, 2) }}</span> sem juros ou <br><span>R$ {{number_format($produto_destaque->preco, 2) }}</span> via Depósito
+								</div>
 							<div class="comprar-produto">
-							<a class="btn-vermais" href="comprar.php">VER MAIS</a>
+											<a class="btn-vermais" href="{{ route('produto.exibir',$produto_destaque->id) }}" 
+											data-dalay="50" data-toggle="tooltip" title="O produto será adicionado ao seu carrinho" style="border:none;">
+												Ver mais</a>
 							</div>
 							</div>
 						</div>
@@ -172,7 +180,7 @@
 					<div class="col-lg-8 col-md-6 col-sm-6 col-xm-12">
 						<div class="product">
 						<a href="#" ><img class="img-categoria img-categoria-banner img-categoria-custom " 
-							src="{{ url('storage/imagens/produtos/blusas/blusa1.png')}}" alt="" title=""></a>
+							src="{{ url('imagens/produtos/blusas/blusa1.png')}}" alt="" title=""></a>
 						</div>
 					</div>
 				</li>
@@ -181,7 +189,7 @@
 					<div class="product">
 					<a href="#" >
 						<img class="img-categoria iimg-categoria-banner img-categoria-custom" 
-						src="{{ url('storage/imagens/produtos/regata/regata2.png') }}" alt="" title="">
+						src="{{ url('imagens/produtos/regata/regata2.png') }}" alt="" title="">
 					</a>
 					</div>
 				</div>
@@ -196,7 +204,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xm-12">
 						<div class="product">
 						<a href="#" ><img class="img-categoria img-categoria-banner img-categoria-custom" 
-							src="{{ url('storage/imagens/produtos/regata/babylook long.png') }}" alt="" title=""></a>
+							src="{{ url('imagens/produtos/regata/babylook long.png') }}" alt="" title=""></a>
 						</div>
 					</div>
 					</li>
@@ -204,11 +212,36 @@
 					<div class="col-lg-8 col-md-6 col-sm-6 col-xm-12">
 						<div class="product">
 						<a href="#" ><img class="img-categoria img-categoria-banner img-categoria-custom" 
-							src="{{ url('storage/imagens/produtos/regata/almofadas.png') }}" alt="" title=""></a>
+							src="{{ url('imagens/produtos/regata/almofadas.png') }}" alt="" title=""></a>
 						</div>
 					</div>
 					</li>
 				</ul>
 				</div>
 	</div><!-- FIM CONTAINER -->
+	<div class="container-fluid">
+      <div class="container"><!-- CONTAINER -->
+        <div class="row">
+        <div class="title-lancamento text-center"><i class="fab fa-2x fa-instagram"></i>  SIGA NOSSO <a href="#">INSTAGRAM@HOLLY</a></div>
+          <h2 class="text-center">embed do instagram</h2>
+        </div>
+      </div><!-- FIM  CONTAINER -->
+  
+    <section class="home-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="single">
+              <h2>RECEBA NOSSAS OFERTAS POR E-MAIL</h2>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="E-mail">
+              <span class="input-group-btn">
+              <button class="btn btn-theme" type="submit">Subscribe</button>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 	@endsection
